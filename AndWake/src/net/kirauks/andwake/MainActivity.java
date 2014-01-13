@@ -27,9 +27,10 @@ import net.kirauks.andwake.fragments.handlers.UpdateGroupHandler;
 import net.kirauks.andwake.targets.Computer;
 import net.kirauks.andwake.targets.Group;
 import net.kirauks.andwake.targets.db.DataSourceHelper;
-import android.app.ActionBar;
-import android.app.ActionBar.Tab;
-import android.app.FragmentTransaction;
+import android.support.v7.app.ActionBar;
+import android.support.v7.app.ActionBar.Tab;
+import android.support.v7.app.ActionBarActivity;
+import android.support.v4.app.FragmentTransaction;
 import android.appwidget.AppWidgetManager;
 import android.content.ComponentName;
 import android.content.Intent;
@@ -42,7 +43,7 @@ import android.support.v4.view.ViewPager;
 import android.view.Menu;
 import android.view.MenuItem;
 
-public class MainActivity extends FragmentActivity implements CancelHandler,
+public class MainActivity extends ActionBarActivity implements CancelHandler,
         CreateGroupHandler, UpdateGroupHandler, DeleteGroupHandler,
         CreateComputerHandler, UpdateComputerHandler, DeleteComputerHandler,
         FavoriteGroupHandler, FavoriteComputerHandler,
@@ -196,7 +197,7 @@ public class MainActivity extends FragmentActivity implements CancelHandler,
 
         this.setContentView(R.layout.activity_main);
 
-        final ActionBar actionBar = this.getActionBar();
+        final ActionBar actionBar = this.getSupportActionBar();
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
         actionBar.setDisplayShowTitleEnabled(false);
 
